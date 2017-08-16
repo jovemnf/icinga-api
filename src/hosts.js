@@ -22,7 +22,7 @@ class Hosts {
 					"Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")
 				}
 			};
-			request.get(options,(err, r, body) => (err) ? fail(err) : ok(body));
+			request.get(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
     
@@ -42,7 +42,7 @@ class Hosts {
 					"Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")
 				}
 			};
-			request.delete(options,(err, r, body) => (err) ? fail(err) : ok(body));
+			request.delete(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
 	
@@ -63,7 +63,7 @@ class Hosts {
 					"Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")
 				}
 			};
-			request.put(options,(err, r, body) => (err) ? fail(err) : ok(body));
+			request.put(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
     
@@ -84,7 +84,7 @@ class Hosts {
 					"Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")
 				}
 			};
-			request.post(options,(err, r, body) => (err) ? fail(err) : ok(body));
+			request.post(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
     
@@ -104,7 +104,7 @@ class Hosts {
 					"Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")
 				}
 			};
-			request.get(options,(err, r, body) => (err) ? fail(err) : ok(body));
+			request.get(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
     

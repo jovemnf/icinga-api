@@ -1,6 +1,6 @@
 {
   "name": "icinga-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a client for cinga2",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/jovemnf/icinga-api#readme",
   "dependencies": {
-    "request": "^2.81.0",
-    "request-promise-native": "^1.0.4"
+    "jsen": "^0.6.6",
+    "request": "^2.81.0"
   }
 }

@@ -22,7 +22,7 @@ class Services {
 					"Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")
 				}
 			};
-			request.get(options,(err, r, body) => (err) ? fail(err) : ok(body));
+			request.get(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
     
@@ -44,7 +44,7 @@ class Services {
 					"Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")
 				}
 			};
-			request.post(options,(err, r, body) => (err) ? fail(err) : ok(body));
+			request.post(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
     
@@ -66,7 +66,7 @@ class Services {
 					"Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")
 				}
 			};
-			request.put(options,(err, r, body) => (err) ? fail(err) : ok(body));
+			request.put(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
     
@@ -86,7 +86,27 @@ class Services {
 					"Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")
 				}
 			};
-			request.get(options,(err, r, body) => (err) ? fail(err) : ok(body));
+			request.get(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
+		});
+	}
+    
+	/**
+     *
+     * @returns {Promise}
+     */
+	remove(name_service){
+		return new Promise((ok, fail) => {
+			if (!name_service){
+				return fail(new Error("name os service not found"));
+			}
+			let options = {
+				url: this.hostname + "/v1/objects/services/" + name_service,
+				strictSSL: false,
+				headers: {
+					"Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")
+				}
+			};
+			request.delete(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
     
