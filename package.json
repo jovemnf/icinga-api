@@ -1,0 +1,29 @@
+{
+  "name": "icinga-api",
+  "version": "0.0.1",
+  "description": "a client for cinga2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jovemnf/icinga-api.git"
+  },
+  "keywords": [
+    "icinga",
+    "nagios",
+    "smnp",
+    "mikrotik"
+  ],
+  "author": "wallace silva <wsilvasjb@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jovemnf/icinga-api/issues"
+  },
+  "homepage": "https://github.com/jovemnf/icinga-api#readme",
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4"
+  }
+}

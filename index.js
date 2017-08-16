@@ -1,0 +1,1 @@
+exports.Icinga = require("./src/icinga");
