@@ -1,15 +1,15 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
 let Hosts = require("./hosts");
 let Services = require("./services");
 
+
 class Icinga {
-    
+ 
 	constructor(hostname, username, password){
 	    this.hostname = hostname;
 	    this.username = username;
 	    this.password = password;
 	}
-    
+ 
 	/**
      *
      * @returns Hosts
@@ -17,7 +17,7 @@ class Icinga {
 	get hosts(){
 	    return new Hosts(this.hostname,this.username, this.password);
 	}
-    
+ 
 	/**
      *
      * @returns Services

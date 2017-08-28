@@ -1,14 +1,14 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
 let request = require("request");
+let Buffer = require("buffer").Buffer;
 
 class Hosts {
-    
+ 
 	constructor(hostname, username, password){
 		this.hostname = hostname;
 		this.username = username;
 		this.password = password;
 	}
-    
+ 
 	/**
      *
      * @returns {Promise}
@@ -25,7 +25,7 @@ class Hosts {
 			request.get(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
-    
+ 
 	/**
      *
      * @param hostname
@@ -66,7 +66,7 @@ class Hosts {
 			request.put(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
-    
+ 
 	/**
      *
      * @param hostname
@@ -87,7 +87,7 @@ class Hosts {
 			request.post(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
-    
+ 
 	/**
      *
      * @returns {Promise}
@@ -107,7 +107,7 @@ class Hosts {
 			request.get(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
-    
+ 
 }
 
 module.exports = Hosts;

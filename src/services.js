@@ -1,14 +1,14 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
 let request = require("request");
+let Buffer = require("buffer").Buffer;
 
 class Services {
-    
+ 
 	constructor(hostname, username, password){
 		this.hostname = hostname;
 		this.username = username;
 		this.password = password;
 	}
-    
+ 
 	/**
      *
      * @returns {Promise}
@@ -25,7 +25,7 @@ class Services {
 			request.get(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
-    
+ 
 	/**
      *
      * @param servicename
@@ -47,7 +47,7 @@ class Services {
 			request.post(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
-    
+ 
 	/**
      *
      * @param servicename
@@ -69,7 +69,7 @@ class Services {
 			request.put(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
-    
+ 
 	/**
      *
      * @returns {Promise}
@@ -89,7 +89,7 @@ class Services {
 			request.get(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
-    
+ 
 	/**
      *
      * @returns {Promise}
@@ -109,7 +109,7 @@ class Services {
 			request.delete(options,(err, r, body) => (err) ? fail(err) : ok(JSON.parse(body)));
 		});
 	}
-    
+ 
 }
 
 module.exports = Services;
