@@ -14,9 +14,10 @@ class Hosts {
      * @returns {Promise}
      */
     get(query){
+        let qrt = (query) ? query : "";
         return new Promise((resolve, reject) => {
             let options = {
-                url: this.hostname + "/v1/objects/hosts" + (query) ? query : "",
+                url: this.hostname + "/v1/objects/hosts" + qrt,
                 strictSSL: false,
                 headers: {
                     "Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")
