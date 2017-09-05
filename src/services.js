@@ -8,15 +8,17 @@ class Services {
         this.username = username;
         this.password = password;
     }
- 
+    
     /**
      *
-     * @returns {Promise}
+     * @param query
+     * @return {Promise}
      */
-    get(){
+    get(query){
+        let qrt = (query) ? query : "";
         return new Promise((resolve, reject) => {
             let options = {
-                url: this.hostname + "/v1/objects/services",
+                url: this.hostname + "/v1/objects/services" + qrt,
                 strictSSL: false,
                 headers: {
                     "Authorization": "Basic " + new Buffer(this.username + ":" + this.password).toString("base64")

@@ -60,3 +60,4 @@ typings/
 .idea/
 node_modules/
 teste.js
+package-lock.json
